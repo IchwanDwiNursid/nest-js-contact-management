@@ -1,0 +1,74 @@
+### Register
+POST http://localhost:3000/api/users/
+Content-Type: application/json
+
+{
+    "name" : "toni",
+    "username" : "toni",
+    "password" : "toni123"
+}
+
+### Login "Admin"
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "username" : "ichwan",
+    "password" : "ichwan123"
+}
+
+### Login "Users"
+
+### Login "Admin"
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "username" : "toni",
+    "password" : "toni123"
+}
+
+
+### get users
+PATCH  http://localhost:3000/api/users/current
+x-token : c11a4d5c-a7f3-4dd6-a437-dc5bb877a05c
+
+
+
+###  create contact "Admin"
+POST http://localhost:3000/api/contacts
+Content-Type: application/json
+x-token : c11a4d5c-a7f3-4dd6-a437-dc5bb877a05c
+
+{
+    "first_name" : "dwi",
+    "last_name" : "nursid"
+}
+
+
+### create contact "Users"
+POST http://localhost:3000/api/contacts
+Content-Type: application/json
+x-token : 99bccf7c-805f-4fbb-8dfc-ef078bb5566a
+
+{
+    "first_name" : "tono",
+    "last_name" : "tono12333"
+}
+
+### search Contact using findMany()  <Forbiden> , because using role guard
+GET  http://localhost:3000/api/contacts
+x-token : 99bccf7c-805f-4fbb-8dfc-ef078bb5566a
+
+###
+
+PUT http://localhost:3000/api/contacts/284/addresses/
+x-token : test
+
+{
+    "street": "jl.test-lagi",
+    "city": "test-lagi",
+    "province": "test-lagi",
+    "country": "test",
+    "postal_code": "lorem",
+}
